@@ -1,0 +1,144 @@
+.nav>li>a {
+position: relative;
+display: block;
+padding: 6px 12px;
+background-image: linear-gradient(to bottom,#fff 0,#e0e0e0 100%);
+background-repeat: repeat-x;
+border-color: #ccc;
+border: 1px solid transparent;
+border-radius: 4px;
+}
+
+.chart-tab{
+    /* width = (100 / number of tabs). This example assumes 3 tabs. */
+    width:33.33333%;
+}
+
+
+
+.filter-input {
+    padding-top: 5px;
+    padding-left:5px;
+    padding-right:5px;
+    padding-bottom:5px;
+    margin-top: 5px;
+}
+
+.panel-heading {
+    padding: 0px;
+}
+
+.badge{
+    color: @black;
+    border: 1px solid @grayLight;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* Customize container */
+@media (min-width: 768px) {
+
+}
+
+/* most sizes are larger */
+@media screen and (min-width:470px){
+    h3 {
+        padding-top:8px;
+        padding-left:8px;
+        padding-bottom:0px;
+        margin:0px;
+        line-height: 24px;
+    }
+    .media-left{
+        float: left;
+    }
+    .media-right{
+        float: right;
+    }
+    .container {
+        max-width: 730px;
+    }
+    .navbar {
+        max-width: 710px;
+    }
+    
+    body {
+        padding-top: 40px;
+        padding-bottom: 42px;
+        overflow-y: hidden;
+        font-family: Verdana, Helvetica, sans-serif;
+        background-color: #FFFFFF;
+    }
+}
+/* half laptop screen size*/
+@media screen and (min-width:354px) and (max-width: 469px)  {
+    h3 {
+        padding-top:8px;
+        padding-left:0px;
+        margin:0px;
+        line-height: 40px;
+    }
+    .media-left{
+        float: none !important;
+    }
+    .media-right{
+        float: none !important;
+    }
+    body {
+        padding-top: 100px;
+        padding-bottom: 42px;
+        overflow-y: hidden;
+        font-family: Verdana, Helvetica, sans-serif;
+        background-color: #FFFFFF;
+    }
+}
+
+/* iphone size */
+@media only screen and (max-width: 353px)  {
+    h3 {
+        padding-top:8px;
+        padding-left:0px;
+        margin:0px;
+        padding-bottom: 5px;
+    }
+    .media-left{
+        float: none !important;
+    }
+    .media-right{
+        float: none !important;
+        padding-top:0px;
+        padding-left:0px;
+        margin:0px;
+    }
+    body {
+        padding-top: 80px;
+        padding-bottom: 42px;
+        overflow-y: hidden;
+        font-family: Verdana, Helvetica, sans-serif;
+        background-color: #FFFFFF;
+    }
+}
+
+.navbar{
+    min-height:40px;
+}
+
+.navbar-inner {
+  float:none;
+  display:inline-block;
+  text-align:center;
+}
+
+
+.portfolio-title {
+    float:none;
+    margin-top:5px;
+    margin-bottom:0px;
+    margin-left:30px;
+    margin-right:auto;
+}

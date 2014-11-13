@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- meta-information -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>energytrak-prototype</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="prototype of new energytrak interface at ISU, for Wendy Kisch and SE 509.  Energytrak will help to monitor and reduce wasteful utility usage in the context of ISU's room heating/cooling exemption policy.">
+    <meta name="author" content="Carl Chapman">
+    
+    <!-- Bootstrap and CSS-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <!-- Bootstrap theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="./stylesheets/main.css">
+</head>
+
+<body>
+    <!-- title and navigation pills -->
+    <div class="container">
+    	<div class="navbar navbar-fixed-top navbar-default" style="margin: 0 auto; display: block; text-align: center">
+    		<div class="row">
+				<div>
+					<h3 class="text-muted media-left">energytrak</h3>
+				</div>
+				    <ul class="btn-group nav nav-tabs ">
+                        <li> 
+                            <button type="button" class="btn btn-default" data-toggle="tab" href="#request">Request Heating/Cooling Exemption</button>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                View Utility Usage<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                              <li><a class="active" data-toggle="tab" href="#b1">Building 1</a></li>
+                              <li><a  class="" data-toggle="tab" href="#b2">Building 2</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+		  	</div>
+        </div>
+    </div>
+
+    <!-- building pages -->
+    <div class="container">
+        <!-- begin content area -->
+        <div class="contentArea tab-content">
+            <!-------------Building 1---------------->
+            <div class="contents tab-pane active" id="b1">
+                <div role="tabpanel">
+
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active chart-tab"><a href="#heating_b1" aria-controls="heating_b2" role="tab" data-toggle="tab">Heating</a></li>
+                    <li role="presentation" class="chart-tab"><a href="#cooling_b1" aria-controls="cooling_b2" role="tab" data-toggle="tab">Cooling</a></li>
+                    <li role="presentation" class="chart-tab"><a href="#electricity_b1" aria-controls="electricity_b2" role="tab" data-toggle="tab">Electricity</a></li>
+                  </ul>
+                  <!-- Tab panes -->
+                  <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="heating_b1">
+                        <div>
+                            <h2>Building 1 Heating</h2>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="cooling_b1">
+                        <div>
+                            <h2>Building 1 Cooling</h2>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="electricity_b1">
+                        <div>
+                            <h2>Building 1 Electricity</h2>
+                        </div>
+                    </div>
+                  </div>
+
+                </div>
+            </div>
+            <!--------------End Building 1--------------->
+            <!-------------Building  2---------------->
+            <div class="contents tab-pane" id="b2">
+                <div role="tabpanel">
+
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active chart-tab"><a href="#heating_b2" aria-controls="heating_b2" role="tab" data-toggle="tab">Heating</a></li>
+                    <li role="presentation" class="chart-tab"><a href="#cooling_b2" aria-controls="cooling_b2" role="tab" data-toggle="tab">Cooling</a></li>
+                    <li role="presentation" class="chart-tab"><a href="#electricity_b2" aria-controls="electricity_b2" role="tab" data-toggle="tab">Electricity</a></li>
+                  </ul>
+                  <!-- Tab panes -->
+                  <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active nav-justified" id="heating_b2">
+                        <div>
+                            <h2>Building 2 Heating</h2>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane nav-justified" id="cooling_b2">
+                        <div>
+                            <h2>Building 2 Cooling</h2>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane nav-justified" id="electricity_b2">
+                        <div>
+                            <h2>Building 2 Electricity</h2>
+                        </div>
+                    </div>
+                  </div>
+
+                </div>
+            </div>
+            <!--------------End Building 2--------------->
+            <!-------------Exemption Request---------------->
+            <div class="contents tab-pane" id="request">
+                <p>TESTSS3</p>
+                <p>TESTSS3</p>
+                <p>TESTSS3</p>
+                <p>TESTSS3</p>
+            </div>
+            <!--------------End Exemption Request--------------->
+        </div><!-- end content area -->
+    </div>
+    <!-- end main container -->
+    
+    <!-- jQuery (necessary for Bootstrap 's JavaScript plugins) -->
+    <!-- note that if you remove the min, it won't work -->
+    <script src="/js/jquery.min.js"></script>
+    
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+	<script src="/js/date.js"></script>   
+    <script src="/js/custom.js"></script>
+    <script src="/js/raphael-min.js"></script>
+    <script src="/js/g.raphael-min.js"></script>
+                           <script>var r=Raphael(10, 50, 640, 480);r.vbarchart(0, 0, 620, 260, [76, 70, 67, 71, 69], {});
+                        </script>
+
+    
+</body>
+</html>

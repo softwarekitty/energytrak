@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- meta-information -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>energytrak-prototype</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="prototype of new energytrak interface at ISU, for Wendy Kisch and SE 509.  Energytrak will help to monitor and reduce wasteful utility usage in the context of ISU's room heating/cooling exemption policy.">
+    <meta name="author" content="Carl Chapman">
+    
+    <!-- Bootstrap and CSS-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <!-- Bootstrap theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="./stylesheets/main.css">
+</head>
+
+<body>
+    <div>
+    <p>stuff</p>
+    </div>
+    <!-- end main container -->
+    
+    <!-- jQuery (necessary for Bootstrap 's JavaScript plugins) -->
+    <!-- note that if you remove the min, it won't work -->
+    <script src="/js/jquery.min.js"></script>
+    
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+	<script src="/js/date.js"></script>   
+    <script src="/js/raphael.min.js"></script>
+    <script src="/js/g.raphael.min.js"></script>
+    <script src="/js/b.bar.min.js"></script>
+    <script>
+        var r = Raphael(10, 50, 640, 480);
+        r.vbarchart(0, 0, 620, 260, [76, 70, 67, 71, 69], {});
+    </script>
+
+    
+</body>
+</html>
