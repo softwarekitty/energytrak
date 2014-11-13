@@ -136,7 +136,12 @@
 	<script src="/js/date.js"></script>   
     <script src="/js/raphael-min.js" type="text/javascript" charset="utf-8"></script>
     <script src="/js/g.raphael-min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="/js/g.bar-min.js" type="text/javascript" charset="utf-8"></script>
+    
+    <!-- thanks to: http://stackoverflow.com/questions/18530778/adding-label-for-graphael-bar-chart-throws-paper-labelise-error -->
+    <!-- original graphael labeling seems to be broken, but this library fixes it: https://raw.githubusercontent.com/jhurt/g.raphael/master/g.bar.js -->
+    <script src="/js/g.bar.js" type="text/javascript" charset="utf-8"></script>
+    
+    <!-- call custom scripts last - they depend on some libraries above -->
     <script src="/js/custom.js" type="text/javascript" charset="utf-8"></script>
 
     
