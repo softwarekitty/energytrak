@@ -1,46 +1,72 @@
-<!DOCTYPE html>
-<html>
-
+<!--<!doctype html>-->
+<html lang="en">
 <head>
-    <!-- meta-information -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>energytrak-prototype</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="prototype of new energytrak interface at ISU, for Wendy Kisch and SE 509.  Energytrak will help to monitor and reduce wasteful utility usage in the context of ISU's room heating/cooling exemption policy.">
-    <meta name="author" content="Carl Chapman">
-    
-    <!-- Bootstrap and CSS-->
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <!-- Bootstrap theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="./stylesheets/main.css">
+  <meta charset="utf-8">
+  <title>Static Bar Charts</title>
+
+  <script type="text/javascript" charset="utf-8">
+      window.onload = function () {
+          var r = Raphael("holder"),
+                  data1 = [[55, 20, 13, 32, 5, 1, 2, 10], [10, 2, 1, 5, 32, 13, 20, 55], [12, 20, 30]],
+                  data2 = [[55, 20, 13, 32, 5, 1, 2, 10], [10, 2, 1, 5, 32, 13, 20, 55], [12, 20, 30]],
+                  data3 = [[55, 20, 13, 32, 5, 1, 2, 10], [10, 2, 1, 5, 32, 13, 20, 55], [12, 20, 30]],
+                  txtattr = { font: "12px 'Fontin Sans', Fontin-Sans, sans-serif" };
+ 
+          r.text(160, 10, "Single Series Chart").attr(txtattr);
+//          r.text(480, 10, "Multiline Series Chart").attr(txtattr);
+//          r.text(160, 250, "Multiple Series Stacked Chart").attr(txtattr);
+//          r.text(480, 250, 'Multiline Series Stacked Vertical Chart. Type "round"').attr(txtattr);
+          var labels = ["Company X", "Company Y", "Company Z"]
+          var barChart = r.barchart(10, 10, 300, 220, [[9,5,2]], 0, {stacked: true, type: "soft"})//.label([labels]);	  
+	  
+	  barChart.addlabels = function () {
+		
+		this.bars
+		
+		console.log(this.bars);		
+	
+	};
+	barChart.addlabels();
+ 
+          //r.barchart(10, 10, 300, 220, [[55, 20, 13, 32, 5, 1, 2, 10]], 0, {type: "sharp"}).label([['C', 'D', 'E', 'G', 'L', 'M', 'P', 'S1']]);
+          //barChart.label(['a','b','c']);
+//          r.barchart(330, 10, 300, 220, data1);
+//          r.barchart(10, 250, 300, 220, data2, {stacked: true});
+//          r.barchart(330, 250, 300, 220, data3, {stacked: true, type: "round"});
+      };
+  </script>
 </head>
-
-<body>
-    <div>
-    <p>stuff</p>
+<body class="raphael" id="g.raphael.dmitry.baranovskiy.com">
+<!-- title and navigation pills -->
+    <div class="container">
+    	<div class="navbar navbar-fixed-top navbar-default" style="margin: 0 auto; display: block; text-align: center">
+    		<div class="row">
+				<div>
+					<h3 class="text-muted media-left">energytrak</h3>
+				</div>
+				    <ul class="btn-group nav nav-tabs ">
+                        <li> 
+                            <button type="button" class="btn btn-default" data-toggle="tab" href="#request">Request Heating/Cooling Exemption</button>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                View Utility Usage<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                              <li><a class="active" data-toggle="tab" href="#b1">Building 1</a></li>
+                              <li><a  class="" data-toggle="tab" href="#b2">Building 2</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+		  	</div>
+        </div>
     </div>
-    <!-- end main container -->
-    
-    <!-- jQuery (necessary for Bootstrap 's JavaScript plugins) -->
-    <!-- note that if you remove the min, it won't work -->
-    <script src="/js/jquery.min.js"></script>
-    
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="/js/bootstrap.min.js"></script>
-	<script src="/js/date.js"></script>   
-    <script src="/js/raphael.min.js"></script>
-    <script src="/js/g.raphael.min.js"></script>
-    <script src="/js/b.bar.min.js"></script>
-    <script>
-        var r = Raphael(10, 50, 640, 480);
-        r.vbarchart(0, 0, 620, 260, [76, 70, 67, 71, 69], {});
-    </script>
-
-    
+<div id="holder"></div>
+<p>
+  Demo of <a href="http://g.raphaeljs.com/">G Raphael</a> JavaScript library.
+</p>
+  <script src="/js/raphael-min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/g.raphael-min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/g.bar-min.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
