@@ -14,7 +14,23 @@ border-radius: 4px;
     width:33.33333%;
 }
 
+.big-padding{
 
+padding: 60px 12px;
+
+}
+
+.grey1{
+    background-color: #FcFbFc;
+}
+
+.grey2{
+    background-color: #F7F5F7;
+}
+
+.grey3{
+    background-color: #F2F0F2;
+}
 
 .filter-input {
     padding-top: 5px;
