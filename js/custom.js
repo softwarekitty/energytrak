@@ -93,3 +93,94 @@ function tweak(arr){
     }
     return tweaked;
 }
+
+$('#select_building_div .btn-group .dropdown-menu li a').click(function() {
+    //change all button texts
+    var bldg = $(this).text();
+    $('#select_building_div .btn-group button').text(bldg);
+    $('#select_floor_div .btn-group button').text("Select Floor");
+    $('#select_room_div .btn-group button').text("Select Room");
+
+    //set disabled status
+    $('#select_floor_div .btn-group button').removeClass("disabled");
+    $('#select_room_div .btn-group button').addClass("disabled");
+    $('#exemption_pdf_div .btn-group button').addClass("disabled");
+    
+    //change floors available
+    if(bldg==="Building 1"){
+        $("#select_floor_menu").empty();
+        $("#select_floor_menu").append('<li><a href="#">floor 1</a></li>');
+        $("#select_floor_menu").append('<li><a href="#">floor 2</a></li>');
+    }else{
+        $("#select_floor_menu").empty();
+        $("#select_floor_menu").append('<li><a href="#">floor 0</a></li>');
+        $("#select_floor_menu").append('<li><a href="#">floor 1</a></li>');
+        $("#select_floor_menu").append('<li><a href="#">floor 2</a></li>');
+        $("#select_floor_menu").append('<li><a href="#">floor 3</a></li>');
+    }
+    
+    //reset colors
+    $('#select_floor_div').removeClass("grey1");
+    $('#select_room_div').removeClass("grey2").addClass("grey1");
+    $('#exemption_pdf_div').removeClass("grey3 grey1").addClass("grey2");
+});
+
+$('#select_floor_div .btn-group .dropdown-menu').on('click','li a',function(){
+
+    //change all button texts
+    var floor = $(this).text();
+    $('#select_floor_div .btn-group button').text(floor);
+    $('#select_room_div .btn-group button').text("Select Room");
+    
+    //set disabled status
+    $('#select_room_div .btn-group button').removeClass("disabled");
+    $('#exemption_pdf_div .btn-group button').addClass("disabled");
+    
+    var bldg = $('#select_building_div .btn-group button').text();
+    
+    //change rooms available
+    if(bldg==="Building 1"){
+        if(floor === "floor 1"){
+        $("#select_room_menu").empty();
+        $("#select_room_menu").append('<li><a href="#">room 1034</a></li>');
+        $("#select_room_menu").append('<li><a href="#">room 1035</a></li>');
+        }else{
+        $("#select_room_menu").empty();
+        $("#select_room_menu").append('<li><a href="#">room 2001</a></li>');
+        $("#select_room_menu").append('<li><a href="#">room 2203</a></li>');
+        $("#select_room_menu").append('<li><a href="#">room 2005</a></li>');
+        }
+    }else{
+        if(floor === "floor 0"){
+        $("#select_room_menu").empty();
+        $("#select_room_menu").append('<li><a href="#">room 0012</a></li>');
+        $("#select_room_menu").append('<li><a href="#">room 0094</a></li>');
+        $("#select_room_menu").append('<li><a href="#">room 0078</a></li>');
+        }else if(floor === "floor 1"){
+        $("#select_room_menu").empty();
+        $("#select_room_menu").append('<li><a href="#">room 1002</a></li>');
+        $("#select_room_menu").append('<li><a href="#">room 1010</a></li>');
+        $("#select_room_menu").append('<li><a href="#">room 1015</a></li>');
+        $("#select_room_menu").append('<li><a href="#">room 1052</a></li>');
+        $("#select_room_menu").append('<li><a href="#">room 1090</a></li>');
+        $("#select_room_menu").append('<li><a href="#">room 1111</a></li>');
+        }else if(floor === "floor 2"){
+        $("#select_room_menu").empty();
+        $("#select_room_menu").append('<li><a href="#">room 2853</a></li>');
+        $("#select_room_menu").append('<li><a href="#">room 2311</a></li>');
+        $("#select_room_menu").append('<li><a href="#">room 2008</a></li>');
+        $("#select_room_menu").append('<li><a href="#">room 2777</a></li>');
+        }else{
+        $("#select_room_menu").empty();
+        $("#select_room_menu").append('<li><a href="#">room 3214</a></li>');
+        $("#select_room_menu").append('<li><a href="#">room 3990</a></li>');
+        $("#select_room_menu").append('<li><a href="#">room 3461</a></li>');
+        $("#select_room_menu").append('<li><a href="#">room 3001</a></li>');
+        }
+    }
+    
+    //reset colors    
+    $('#select_floor_div').removeClass("grey1");
+    $('#select_room_div').removeClass("grey1 grey2");
+    $('#exemption_pdf_div').removeClass("grey2 grey3").addClass("grey1");
+});

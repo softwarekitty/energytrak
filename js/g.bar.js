@@ -190,15 +190,15 @@
         
         total = (opts.to) || total;
 
-        var barwidth = width / (len * (100 + gutter) + gutter) * 100,
+        var barwidth = (width / (len * (100 + gutter) + gutter) * 100)-4,
             barhgutter = barwidth * gutter / 100,
-            barvgutter = opts.vgutter == null ? 20 : opts.vgutter,
+            barvgutter = opts.vgutter == null ? 20: opts.vgutter,
             stack = [],
             X = x + barhgutter,
             Y = (height - 2 * barvgutter) / total;
 
         if (!opts.stretch) {
-            barhgutter = Math.round(barhgutter);
+            barhgutter = Math.round(barhgutter)+4;
             barwidth = Math.floor(barwidth);
         }
 

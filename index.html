@@ -113,42 +113,51 @@
                 </div>
             </div>
             <!--------------End Building 2--------------->
+            
+            
             <!-------------Exemption Request---------------->
-            <div class="span7 text-center dropdown  big-padding">
-              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-                Dropdown
-                <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-              </ul>
-            </div>
-            <div class="span7 text-center contents grey1 big-padding " id="request">
+            <div class="contents tab-pane" id="request">
+            
+            <!--------------Select Building--------------->
+            <div class="span7 text-center big-padding" id="select_building_div">
                 <div class="btn-group">
-                    <button class="btn btn-primary dropdown-toggle disabled" data-toggle="dropdown">Action <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">Action</a></li>
-                      <li><a href="#">Another action</a></li>
-                      <li><a href="#">Something else here</a></li>
-                      <li class="divider"></li>
-                      <li><a href="#">Separated link</a></li>
+                    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Select Building<span class="caret"></span></button>
+                    <ul class="dropdown-menu" id="select_building_menu">
+                      <li><a href="#">Building 1</a></li>
+                      <li><a href="#">Building 2</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="span7 text-center contents grey2 big-padding">
+            <!--------------End Select Building--------------->
+            
+            <!--------------Select Floor--------------->
+            <div class="span7 text-center big-padding grey1" id="select_floor_div">
                 <div class="btn-group">
-                    <p>select rooms</p>
+                    <button class="btn btn-primary dropdown-toggle disabled" data-toggle="dropdown">Select Floor<span class="caret"></span></button>
+                    <ul class="dropdown-menu" id="select_floor_menu">
+                    </ul>
                 </div>
             </div>
-            <div class="span7 text-center contents grey3 big-padding">
+            <!--------------End Select Floor--------------->
+            
+            <!--------------Select Room--------------->
+            <div class="span7 text-center grey2 big-padding " id="select_room_div">
                 <div class="btn-group">
-                    <p>select rooms</p>
+                    <button class="btn btn-primary dropdown-toggle disabled" data-toggle="dropdown">Select Room<span class="caret"></span></button>
+                    <ul class="dropdown-menu" id="select_room_menu">
+                    </ul>
                 </div>
             </div>
+            <!--------------End Select Room--------------->
+            
+            <!--------------Begin Exemption pdf--------------->
+            <div class="span7 text-center contents grey3 big-padding" id="exemption_pdf_div">
+                <button class="btn btn-primary disabled" id="exemption_button">Get Exemption pdf</button>
+            </div>
+            <!--------------End Exemption pdf--------------->
             <!--------------End Exemption Request--------------->
+            
+            
         </div><!-- end content area -->
     </div>
     <!-- end main container -->
