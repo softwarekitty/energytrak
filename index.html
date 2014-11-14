@@ -36,8 +36,8 @@
                                 View Utility Usage<span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
-                              <li><a class="active" data-toggle="tab" href="#b1">Building 1</a></li>
-                              <li><a  class="" data-toggle="tab" href="#b2">Building 2</a></li>
+                              <li><a class="active" data-toggle="tab" href="#b1" id="control_tab1">Building 1</a></li>
+                              <li><a  class="" data-toggle="tab" href="#b2" id="control_tab2">Building 2</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -55,27 +55,23 @@
 
                   <!-- Nav tabs -->
                   <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active chart-tab"><a href="#heating_b1" aria-controls="heating_b2" role="tab" data-toggle="tab">Heating</a></li>
-                    <li role="presentation" class="chart-tab"><a href="#cooling_b1" aria-controls="cooling_b2" role="tab" data-toggle="tab">Cooling</a></li>
-                    <li role="presentation" class="chart-tab"><a href="#electricity_b1" aria-controls="electricity_b2" role="tab" data-toggle="tab">Electricity</a></li>
+                    <li role="presentation" class="active chart-tab"><a href="#heating_b1" id="heating_b1_tab" aria-controls="heating_b1" role="tab" data-toggle="tab">Heating</a></li>
+                    <li role="presentation" class="chart-tab"><a href="#cooling_b1" id="cooling_b1_tab" aria-controls="cooling_b1" role="tab" data-toggle="tab">Cooling</a></li>
+                    <li role="presentation" class="chart-tab"><a href="#electricity_b1" id="electricity_b1_tab" aria-controls="electricity_b1" role="tab" data-toggle="tab">Electricity</a></li>
                   </ul>
                   <!-- Tab panes -->
                   <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="heating_b1">
-                        <div>
                             <h2>Building 1 Heating</h2>
-                            <div id="holder"></div>
-                        </div>
+                            <div id="heating_chart_b1"></div>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="cooling_b1">
-                        <div>
                             <h2>Building 1 Cooling</h2>
-                        </div>
+                            <div id="cooling_chart_b1"></div>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="electricity_b1">
-                        <div>
                             <h2>Building 1 Electricity</h2>
-                        </div>
+                            <div id="electricity_chart_b1"></div>
                     </div>
                   </div>
 
@@ -88,25 +84,28 @@
 
                   <!-- Nav tabs -->
                   <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active chart-tab"><a href="#heating_b2" aria-controls="heating_b2" role="tab" data-toggle="tab">Heating</a></li>
-                    <li role="presentation" class="chart-tab"><a href="#cooling_b2" aria-controls="cooling_b2" role="tab" data-toggle="tab">Cooling</a></li>
-                    <li role="presentation" class="chart-tab"><a href="#electricity_b2" aria-controls="electricity_b2" role="tab" data-toggle="tab">Electricity</a></li>
+                    <li role="presentation" class="active chart-tab"><a href="#heating_b2" id="heating_b2_tab" aria-controls="heating_b2" role="tab" data-toggle="tab">Heating</a></li>
+                    <li role="presentation" class="chart-tab"><a href="#cooling_b2" id="cooling_b2_tab" aria-controls="cooling_b2" role="tab" data-toggle="tab">Cooling</a></li>
+                    <li role="presentation" class="chart-tab"><a href="#electricity_b2" id="electricity_b2_tab" aria-controls="electricity_b2" role="tab" data-toggle="tab">Electricity</a></li>
                   </ul>
                   <!-- Tab panes -->
                   <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active nav-justified" id="heating_b2">
                         <div>
                             <h2>Building 2 Heating</h2>
+                            <div id="heating_chart_b2"></div>
                         </div>
                     </div>
                     <div role="tabpanel" class="tab-pane nav-justified" id="cooling_b2">
                         <div>
                             <h2>Building 2 Cooling</h2>
+                            <div id="cooling_chart_b2"></div>
                         </div>
                     </div>
                     <div role="tabpanel" class="tab-pane nav-justified" id="electricity_b2">
                         <div>
                             <h2>Building 2 Electricity</h2>
+                            <div id="electricity_chart_b2"></div>
                         </div>
                     </div>
                   </div>
