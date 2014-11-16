@@ -8,7 +8,7 @@ window.onload = function () {
     data_cb1 = [tweak(seed_cooling,4,1000),tweak(seed_cooling,7,1000),tweak(seed_cooling,8,1000)];
     data_eb1 = [tweak(seed_electricity,4,5000),tweak(seed_electricity,5,5000),tweak(seed_electricity,2,5000)];
     
-    data_hb2 = [tweak(seed_heating,5,4000),tweak(seed_heating,7,4000),tweak(seed_heating,5000)];
+    data_hb2 = [tweak(seed_heating,5,4000),tweak(seed_heating,7,4000),tweak(seed_heating,8,5000)];
     data_cb2 = [tweak(seed_cooling,1,1000),tweak(seed_cooling,3,1000),tweak(seed_cooling,7,1000)];
     data_eb2 = [tweak(seed_electricity,15,4000),tweak(seed_electricity,9,4000),tweak(seed_electricity,12,4000)];
     
