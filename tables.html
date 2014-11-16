@@ -1,19 +1,11 @@
 {% extends "admin.html" %}
 {% block tables %}
-    
-class AHUData(db.Model):
-    #electric, heating, cooling
-    id = db.IntegerProperty()
-    building = db.TextProperty()
-    floor = db.TextProperty()
-    room = db.TextProperty()
-
           
           <!-- Tab panes -->
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="meter">
                 <h2>Meter Data:</h2>
-                <table>
+                <table class="pure-table pure-table-bordered" id="meter_table">
                     <thead>
                         <tr>
                             <th>type</th>
@@ -21,66 +13,84 @@ class AHUData(db.Model):
                             <th>building</th>
                             <th>month</th>
                             <th>year</th>
+                            <th></th>
+                            <!-- image credit to: http://www.clker.com/clipart-12261.html -->
                         </tr>
                     </thead>
                     <tbody>
                         {% for meter in meters %}
                         <tr>
-                            <td>{{meter.type}}</td>
-                            <td>{{meter.value}}</td>
-                            <td>{{meter.building}}</td>
-                            <td>{{meter.month}}</td>
-                            <td>{{meter.year}}</td>
+                            <td><div contenteditable>{{meter.type}}</div></td>
+                            <td><div contenteditable>{{meter.value}}</div></td>
+                            <td><div contenteditable>{{meter.building}}</div></td>
+                            <td><div contenteditable>{{meter.month}}</div></td>
+                            <td><div contenteditable>{{meter.year}}</div></td>
+                            <td><a onclick="javascript:deleteRow(this); return false;"><img width="20px" height="20px" src="/images/delete.svg"></img></a></td>
                         </tr>
                         {% endfor %}
                     </tbody>
                 </table>
+                <div class="span7 text-center contents big-padding">
+                    <button class="btn btn-primary" id="addMeter">Add Row</button>
+                </div>
             </div>
             <div role="tabpanel" class="tab-pane" id="exemption">
                 <h2>Exemption Data:</h2>
-                <table>
+                <table class="pure-table pure-table-bordered" id="exemption_table">
                     <thead>
                         <tr>
                             <th>name</th>
                             <th>begin</th>
                             <th>building</th>
                             <th>room</th>
+                            <th></th>
+                            <!-- image credit to: http://www.clker.com/clipart-12261.html -->
                         </tr>
                     </thead>
                     <tbody>
                         {% for exemption in exemptions %}
                         <tr>
-                            <td>{{exemption.name}}</td>
-                            <td>{{exemption.begin}}</td>
-                            <td>{{exemption.building}}</td>
-                            <td>{{exemption.room}}</td>
+                            <td><div contenteditable>{{exemption.name}}</div></td>
+                            <td><div contenteditable>{{exemption.begin}}</div></td>
+                            <td><div contenteditable>{{exemption.building}}</div></td>
+                            <td><div contenteditable>{{exemption.room}}</div></td>
+                            <td><a onclick="javascript:deleteRow(this); return false;"><img width="20px" height="20px" src="/images/delete.svg"></img></a></td>
                         </tr>
                         {% endfor %}
                     </tbody>
                 </table>
+                <div class="span7 text-center contents big-padding">
+                    <button class="btn btn-primary" id="addExemption">Add Row</button>
+                </div>
             </div>
             <div role="tabpanel" class="tab-pane" id="ahu">
                 <h2>AHU Data:</h2>
-                <table>
+                <table class="pure-table pure-table-bordered" id="ahu_table">
                     <thead>
                         <tr>
                             <th>id</th>
                             <th>building</th>
                             <th>floor</th>
                             <th>room</th>
+                            <th></th>
+                            <!-- image credit to: http://www.clker.com/clipart-12261.html -->
                         </tr>
                     </thead>
                     <tbody>
                         {% for ahu in ahus %}
                         <tr>
-                            <td>{{ahu.id}}</td>
-                            <td>{{ahu.building}}</td>
-                            <td>{{ahu.floor}}</td>
-                            <td>{{ahu.room}}</td>
+                            <td><div contenteditable>{{ahu.id}}</div></td>
+                            <td><div contenteditable>{{ahu.building}}</div></td>
+                            <td><div contenteditable>{{ahu.floor}}</div></td>
+                            <td><div contenteditable>{{ahu.room}}</div></td>
+                            <td><a onclick="javascript:deleteRow(this); return false;"><img width="20px" height="20px" src="/images/delete.svg"></img></a></td>
                         </tr>
                         {% endfor %}
                     </tbody>
                 </table>
+                <div class="span7 text-center contents big-padding">
+                    <button class="btn btn-primary" id="addAHU">Add Row</button>
+                </div>
             </div>
             
           </div>

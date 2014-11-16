@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="./stylesheets/main.css">
+        <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="./stylesheets/pure-min.css">
 </head>
 
 <body>
@@ -51,8 +53,25 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="/js/bootstrap.min.js"></script>
     
-    <!-- call custom scripts last - they depend on some libraries above -->
-    <script src="/js/custom_admin.js" type="text/javascript" charset="utf-8"></script>
-    
+        <script>
+        //credits: http://stackoverflow.com/questions/21043622/delete-html-table-row-dynamically-using-javascript-with-row-index-with-link
+        var deleteRow = function (link) {
+             var row = link.parentNode.parentNode;
+             var table = row.parentNode; 
+             table.removeChild(row); 
+         }
+        
+        $("#addMeter").on('click','',function(){
+            $('#meter_table tr:last').after('<tr><td><div contenteditable></div></td><td><div contenteditable></div></td><td><div contenteditable></div></td><td><div contenteditable></div></td><td><div contenteditable></div></td><td><a onclick="javascript:deleteRow(this); return false;"><img width="20px" height="20px" src="/images/delete.svg"></img></a></td></tr>');
+        });
+        
+        $("#addExemption").on('click','',function(){
+            $('#exemption_table tr:last').after('<tr><td><div contenteditable></div></td><td><div contenteditable></div></td><td><div contenteditable></div></td><td><div contenteditable></div></td><td><a onclick="javascript:deleteRow(this); return false;"><img width="20px" height="20px" src="/images/delete.svg"></img></a></td></tr>');
+        });
+        
+        $("#addAHU").on('click','',function(){
+            $('#ahu_table tr:last').after('<tr><td><div contenteditable></div></td><td><div contenteditable></div></td><td><div contenteditable></div></td><td><div contenteditable></div></td><td><a onclick="javascript:deleteRow(this); return false;"><img width="20px" height="20px" src="/images/delete.svg"></img></a></td></tr>');
+        });
+    </script>
 </body>
 </html>
