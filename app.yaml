@@ -12,6 +12,9 @@ handlers:
   static_dir: stylesheets
 - url: /images
   static_dir: images
+- url: /admin.*
+  script: energytrak.application
+  login: admin
 - url: /.*
   script: energytrak.application
 # [END handlers]

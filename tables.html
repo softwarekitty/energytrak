@@ -1,0 +1,89 @@
+{% extends "admin.html" %}
+{% block tables %}
+    
+class AHUData(db.Model):
+    #electric, heating, cooling
+    id = db.IntegerProperty()
+    building = db.TextProperty()
+    floor = db.TextProperty()
+    room = db.TextProperty()
+
+          
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="meter">
+                <h2>Meter Data:</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>type</th>
+                            <th>value</th>
+                            <th>building</th>
+                            <th>month</th>
+                            <th>year</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for meter in meters %}
+                        <tr>
+                            <td>{{meter.type}}</td>
+                            <td>{{meter.value}}</td>
+                            <td>{{meter.building}}</td>
+                            <td>{{meter.month}}</td>
+                            <td>{{meter.year}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="exemption">
+                <h2>Exemption Data:</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>name</th>
+                            <th>begin</th>
+                            <th>building</th>
+                            <th>room</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for exemption in exemptions %}
+                        <tr>
+                            <td>{{exemption.name}}</td>
+                            <td>{{exemption.begin}}</td>
+                            <td>{{exemption.building}}</td>
+                            <td>{{exemption.room}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="ahu">
+                <h2>AHU Data:</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>building</th>
+                            <th>floor</th>
+                            <th>room</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for ahu in ahus %}
+                        <tr>
+                            <td>{{ahu.id}}</td>
+                            <td>{{ahu.building}}</td>
+                            <td>{{ahu.floor}}</td>
+                            <td>{{ahu.room}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            
+          </div>
+          <!-- end Tab panes -->
+          
+{% endblock tables %}

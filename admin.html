@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- meta-information -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>energytrak-prototype/admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="prototype of new energytrak interface at ISU, for Wendy Kisch and SE 509.  This page of the prototype is for entering, editing and deleting data.">
+    <meta name="author" content="Carl Chapman">
+    
+    <!-- Bootstrap and CSS-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <!-- Bootstrap theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="./stylesheets/main.css">
+</head>
+
+<body>
+    
+    <!-- title and navigation pills -->
+    <div class="container">
+
+        <!-------------begin tabpanel---------------->
+        <div role="tabpanel">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active chart-tab"><a href="#meter" aria-controls="meter" role="tab" data-toggle="tab">Meter Data</a></li>
+                <li role="presentation" class="chart-tab"><a href="#exemption" aria-controls="exemption" role="tab" data-toggle="tab">Exemption Data</a></li>
+                <li role="presentation" class="chart-tab"><a href="#ahu" aria-controls="ahu" role="tab" data-toggle="tab">AHU Data</a></li>
+            </ul>
+
+            {% block tables %}
+                <h1> Problems loading child template </h1>
+            {% endblock tables%}          
+        </div>
+        <!-------------end tabpanel---------------->
+        
+    </div>
+    <!-- end main container -->
+    
+    <!-- jQuery (necessary for Bootstrap 's JavaScript plugins) -->
+    <!-- note that if you remove the min, it won't work -->
+    <script src="/js/jquery.min.js"></script>
+    
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+    
+    <!-- call custom scripts last - they depend on some libraries above -->
+    <script src="/js/custom_admin.js" type="text/javascript" charset="utf-8"></script>
+    
+</body>
+</html>

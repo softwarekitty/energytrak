@@ -5,6 +5,7 @@ import json
 
 import jinja2
 import webapp2
+from google.appengine.ext import db
 
 
 JINJA_ENVIRONMENT = jinja2.Environment(
@@ -26,21 +27,38 @@ If you select a building, you get 3 tabs with charts on them (grandfathered link
 The button takes you through the questionaire and gives you a pdf
 
 There is a separate data entry/edit/delete interface, password protected
+
+it has three tabs for meters, exemptions and ahu data
+ 
+you can view, edit, add, delete rows from a data store
+
+changes will persist
 '''
+
+#one month of data for one meter in a particular building
+class MeterData(db.Model):
+    #electric, heating, cooling
+    type = db.TextProperty()
+    value = db.IntegerProperty()
+    building = db.TextProperty()
+    month = db.TextProperty()
+    year = db.TextProperty()
     
-#we're using google sheets default format: mm/dd/yyyy
-def seconds_from_date(d):
-    if not d or d==DEFAULT_BEGIN:
-        return 0
-    try:
-        dt = datetime.datetime.strptime(d,"%m/%d/%Y")
-        epoch = datetime.datetime.utcfromtimestamp(0)
-        delta = dt -epoch
-        return delta.total_seconds()
-    except ValueError:
-        return -1
-    except:
-        return -2
+#an exemption
+class ExemptionData(db.Model):
+    #electric, heating, cooling
+    name = db.TextProperty()
+    begin = db.DateProperty()
+    building = db.TextProperty()
+    room = db.TextProperty()
+    
+class AHUData(db.Model):
+    #electric, heating, cooling
+    id = db.IntegerProperty()
+    building = db.TextProperty()
+    floor = db.TextProperty()
+    room = db.TextProperty()
+
  
 
 class MainPage(webapp2.RequestHandler):
@@ -48,8 +66,18 @@ class MainPage(webapp2.RequestHandler):
             
         template = JINJA_ENVIRONMENT.get_template('index.html')
         self.response.write(template.render())
+        
+class AdminPage(webapp2.RequestHandler):
+    def get(self):
+        meters=[MeterData(type="a",value=4,building="b",month="c",year="d")]
+        exemptions=[ExemptionData(name="Destro",begin=datetime.date(year=2014,month=11,day=15),building="library",room="1232")]
+        ahus=[AHUData(id=1,building="library",floor="1a",room="1323")]
+            
+        template = JINJA_ENVIRONMENT.get_template('tables.html')
+        self.response.write(template.render(meters=meters,exemptions=exemptions,ahus=ahus))
 
 
 application = webapp2.WSGIApplication([
     ('/', MainPage),
+    ('/admin', AdminPage),
 ], debug=True)
